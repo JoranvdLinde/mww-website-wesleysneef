@@ -68,17 +68,26 @@ onUnmounted(() => {
     </div>
 
     <!-- Mobile Menu -->
-    <div v-show="isMobileMenuOpen" class="md:hidden bg-white border-t border-slate-100 shadow-xl">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-             <template v-for="item in ['Diensten', 'Over ons', 'Wagenpark']" :key="item">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-blue-600 hover:bg-slate-50">
-                    {{ item }}
-                </a>
-            </template>
-            <RouterLink to="/contact" class="block w-full text-center mt-4 px-3 py-3 rounded-md text-base font-bold bg-blue-600 text-white hover:bg-blue-700">
-                Neem Contact Op
-            </RouterLink>
+    <transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="transform -translate-y-2 opacity-0"
+      enter-to-class="transform translate-y-0 opacity-100"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="transform translate-y-0 opacity-100"
+      leave-to-class="transform -translate-y-2 opacity-0"
+    >
+        <div v-show="isMobileMenuOpen" class="md:hidden absolute top-16 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xl z-40">
+            <div class="px-4 py-6 space-y-4">
+                 <template v-for="item in ['Diensten', 'Over ons', 'Wagenpark']" :key="item">
+                    <a href="#" class="block text-lg font-medium text-slate-700 hover:text-blue-600 border-b border-slate-100 pb-2">
+                        {{ item }}
+                    </a>
+                </template>
+                <RouterLink to="/contact" @click="isMobileMenuOpen = false" class="block w-full text-center mt-6 px-4 py-4 rounded-xl font-bold bg-blue-600 text-white shadow-md active:scale-95 transition-transform">
+                    Neem Contact Op
+                </RouterLink>
+            </div>
         </div>
-    </div>
+    </transition>
   </nav>
 </template>
