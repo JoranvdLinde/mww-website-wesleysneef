@@ -78,17 +78,15 @@
 
     <!-- Image Break / Parallax feel -->
     <section class="relative py-40 flex items-center bg-slate-900 overflow-hidden">
-        <div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1625217527388-3ef1a9866504?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-fixed bg-center opacity-30"></div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="bg-white/5 backdrop-blur-md p-10 md:p-16 rounded-3xl border border-white/10 max-w-2xl">
-                <h2 class="text-4xl font-bold text-white mb-6">Onderdeel van uw groei.</h2>
-                <p class="text-xl text-slate-300 mb-8 leading-relaxed">
-                    Terwijl u zich richt op uw core business, zorgen wij dat uw goederen veilig en op tijd aankomen. Van Rotterdam haven tot het diepste puntje van Duitsland.
-                </p>
-                <RouterLink to="/contact" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">
-                    Bekijk onze bestemmingen
-                </RouterLink>
-            </div>
+        <div class="absolute inset-0 z-0 bg-[url('/src/assets/vrachtwagen.png')] bg-cover bg-fixed bg-center opacity-40"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center">
+            <h2 class="text-4xl font-bold text-white mb-6 text-center">Onderdeel van uw groei.</h2>
+            <p class="text-xl text-slate-300 mb-8 leading-relaxed text-center">
+                Terwijl u zich richt op uw core business, zorgen wij dat uw goederen veilig en op tijd aankomen. Van Rotterdam haven tot het diepste puntje van Duitsland.
+            </p>
+            <RouterLink to="/contact" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-md font-bold text-lg transition shadow-lg">
+                Bekijk onze bestemmingen
+            </RouterLink>
         </div>
     </section>
 
